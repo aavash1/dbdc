@@ -49,81 +49,120 @@ session_start();
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-      <div class="navbar-header">
-     <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button> -->
-      <a class="navbar-brand" href="index.php"><img class="img-responsive2" src="img/dbdclogo.png" alt="LOGO" style="height:25px; width:25px;"></a>
+
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <?php
+
+        if(isset($_SESSION['u_id'])){
+          echo'
+          <div class="navbar-header">
+          <a class="navbar-brand"><img class="img-responsive2" src="img/dbdclogo.png" alt="LOGO" style="height:25px; width:25px;"></a>
+          </div><ul class="nav navbar-nav">
+          <li class="dropdown">
+          <a href="#lala" class="dropdown-toggle" data-toggle="dropdown" >
+          Students
+          <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu" role="listbox">
+          <li><a href="index.php?addStudents" role="option">Add Students</a></li>
+          <li class="divider"></li>
+          <li><a href="index.php?updateStudents" role="option">Update Students</a></li>
+
+          </ul>
+          </li>
+
+          <li class="dropdown">
+          <a href="#lala" class="dropdown-toggle" data-toggle="dropdown" >
+          Publications
+          <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu" role="listbox">
+          <li><a href="index.php?addConf" role="option">Add Papers</a></li>
+          <li class="divider"></li>
+          <li><a href="index.php?updatePaper" role="option">Update Papers</a></li>
+
+          </ul>
+          </li>
+ 
+
+     
+          <form action="includes/logout.inc.php" method="POST">
+          <button type="submit" name="submit" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+         
+          </form>';
+          
+        }
+             // </ul>
+          // <ul class="nav navbar-nav navbar-right">
+          // <li><a href="index.php?login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          // </ul>
+        else{
+          echo'
+          <div class="navbar-header">
+          <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+          </button> -->
+          <a class="navbar-brand" href="index.php"><img class="img-responsive2" src="img/dbdclogo.png" alt="LOGO" style="height:25px; width:25px;"></a>
+          </div><ul class="nav navbar-nav">
+          <li class="active"><a href="index.php?About">About Us</a></li>
+          <li><a href="index.php?Professor">Professor</a></li>
+          <li class="dropdown">
+          <a href="#lala" class="dropdown-toggle" data-toggle="dropdown" >
+          Students
+          <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu" role="listbox">
+          <li><a href="index.php?current" role="option">Current Students</a></li>
+          <li class="divider"></li>
+          <li><a href="index.php?alumni" role="option">Alumnis</a></li>
+
+          </ul>
+          </li>
+
+          <li class="dropdown">
+          <a href="#lala" class="dropdown-toggle" data-toggle="dropdown" >
+          Publications
+          <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu" role="listbox">
+          <li><a href="index.php?conference" role="option">Conference Papers</a></li>
+          <li class="divider"></li>
+          <li><a href="index.php?journal" role="option">Journal Papers</a></li>
+
+          </ul>
+          </li>
+
+          <li><a href="index.php?Contact">Contact</a></li>
+
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.php?login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>';
+        }
+        ?>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <?php
+  </nav>
 
-      if(isset($_SESSION['u_id'])||isset($_SESSION['u_uid'])){
-        echo'
-        <form>
-        <form action="includes/logout.inc.php" method="POST">
-        <button type="submit" name="submit">Logout</button>
-        </form>';
-      }
-      else{
-        echo'<ul class="nav navbar-nav">
-        <li class="active"><a href="index.php?About">About Us</a></li>
-        <li><a href="index.php?Professor">Professor</a></li>
-        <li class="dropdown">
-                <a href="#lala" class="dropdown-toggle" data-toggle="dropdown" >
-                   Students
-                   <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" role="listbox">
-                   <li><a href="index.php?current" role="option">Current Students</a></li>
-                   <li class="divider"></li>
-                   <li><a href="index.php?alumni" role="option">Alumnis</a></li>
-                  
-                </ul>
-             </li>
-        
-             <li class="dropdown">
-                <a href="#lala" class="dropdown-toggle" data-toggle="dropdown" >
-                  Publications
-                   <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" role="listbox">
-                   <li><a href="index.php?conference" role="option">Conference Papers</a></li>
-                   <li class="divider"></li>
-                   <li><a href="index.php?journal" role="option">Journal Papers</a></li>
-                  
-                </ul>
-             </li>
-       
-        <li><a href="index.php?Contact">Contact</a></li>
-
-
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.php?login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>';
-      }
-      ?>
-    </div>
-  </div>
-</nav>
-
-<?php 
-if(isset($_GET['Professor'])){
-	include 'includes/content-professors.php';
-}
-else if(isset($_GET['Research'])){
-	include 'includes/content-members.php';
-}
-else if(isset($_GET['Publications'])){
-	include 'includes/content-publications.php';
-}
-else if(isset($_GET['Contact'])){
-	include 'includes/content-contactus.php';
-}
-else if(isset($_GET['login'])){
+  <?php 
+  if(isset($_GET['Professor'])){
+   include 'includes/content-professors.php';
+ }
+ else if(isset($_GET['Research'])){
+   include 'includes/content-members.php';
+ }
+ else if(isset($_GET['Publications'])){
+   include 'includes/content-publications.php';
+ }
+ else if(isset($_GET['Contact'])){
+   include 'includes/content-contactus.php';
+ }
+ else if(isset($_GET['login'])){
   include 'includes/login.php';
 }
 else if(isset($_GET['current'])){
@@ -138,12 +177,24 @@ else if(isset($_GET['conference'])){
 else if(isset($_GET['journal'])){
   include 'includes/journalp.php';
 }
+else if(isset($_GET['addStudents'])){
+  include 'addStudents.php';
+}
+else if(isset($_GET['updateStudents'])){
+  include 'updateStudents.php';
+}
+else if(isset($_GET['addConf'])){
+  include 'addPaper.php';
+}
+else if(isset($_GET['updatePaper'])){
+  include 'updatePapers.php';
+}
 else{
 	include 'includes/content-aboutus.php';
 }
 ?>
 
- <?php
+<?php
 include 'includes/footer.php';
 
 
