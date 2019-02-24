@@ -8,7 +8,7 @@
     <div class="col-sm-8 text-left"> 
      <h1>Please Insert the Paper Details</h1>
 
-     <form class="form-horizontal" action="" method="POST">
+     <form class="form-horizontal" action="includes/addPapers.inc.php" method="POST">
       <div class="form-group">
         <label class="control-label col-sm-2" for="email">Paper Title:</label>
         <div class="col-sm-10">
@@ -16,20 +16,18 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Main Author:</label>
+        <label class="control-label col-sm-2">Main Author:</label>
         <div class="col-sm-10">          
           <input type="text" class="form-control" id="author" placeholder="First Author" name="author">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Available Link:</label>
+        <label class="control-label col-sm-2">Available Link:</label>
         <div class="col-sm-10">          
           <input type="text" class="form-control" id="ulinks" placeholder="website or URLs" name="ulinks">
         </div>
-      </div>
-
-      
+      </div>  
 
       <div class="form-group">
         <label class="control-label col-sm-2">Select Paper Type:</label>

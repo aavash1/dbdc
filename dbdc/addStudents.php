@@ -8,11 +8,11 @@
     <div class="col-sm-8 text-left"> 
      <h1>Please Insert the student details</h1>
 
-     <form class="form-horizontal" action="" method="POST">
+     <form class="form-horizontal" action="includes/studentadd.inc.php" method="POST">
       <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Name:</label>
+        <label class="control-label col-sm-2" for="name">Name:</label>
         <div class="col-sm-10">          
-          <input type="password" class="form-control" id="pwd" placeholder="Enter fullname" name="pwd">
+          <input type="text" class="form-control" name="name" id="name" placeholder="Enter fullname" >
         </div>
       </div>
       <div class="form-group">
@@ -21,12 +21,11 @@
           <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
         </div>
       </div>
-      
 
       <div class="form-group">
         <label class="control-label col-sm-2" for="comment">Area of Research:</label>
         <div class="col-sm-10"> 
-          <textarea class="form-control"  id="comment" name="researchtext"></textarea>
+          <textarea class="form-control" id="comment" name="research"></textarea>
           <small id="emailHelp" class="form-text text-muted">*NOTE: ONLY FOR THE CURRENT STUDENTS</small>
         </div>
 
@@ -46,10 +45,11 @@
 
       <div class="form-group">        
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default" name="submit">Submit</button>
+          <button type="submit" class="btn btn-insert" name="submit">Submit</button>
         </div>
       </div>
     </form>
+
   </div>
   <div class="col-sm-2 sidenav">
 
