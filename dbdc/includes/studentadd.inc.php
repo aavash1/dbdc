@@ -32,7 +32,8 @@ if(isset($_POST['submit'])){
 				else{
 					$sql="INSERT INTO student_tbl(std_name,std_email, std_research, std_type) VALUES ('$name','$email','$research','$type');";
 					mysqli_query($conn,$sql);
-					header("Location: ../addStudents.php?insertDetails=success");
+					echo "<script type='text/javascript'>alert('submitted Successfully!')</script>";
+					header("Location: ../index.php?insertDetails=success");
 
 				}
 			}

@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
 		exit();
 	}
 	else{
-		if(!preg_match("/^[a-zA-Z/'/-\040]+$/", $title)||!preg_match("/^[a-zA-Z/'/-\040]+$/", $author)){
+		if(preg_match("/^[a-zA-Z/'/-\040]+$/", $title)||preg_match("/^[a-zA-Z/'/-\040]+$/", $author)){
 			header("Location: ../addPaper.php?result=invalid");
 			exit();
 		}
@@ -28,7 +28,7 @@ if(isset($_POST['submit'])){
 			else{
 				$sql="INSERT INTO paper_tbl(paper_title,author_name,available_links,paper_type) VALUES ('$title','$author','$url','$ptype');";
 				mysqli_query($conn,$sql);
-				header("Location: ../addPaper.php?result=success");
+				header("Location: ../updatePaper.php?result=success");
 			}
 		}
 

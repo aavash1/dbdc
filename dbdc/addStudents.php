@@ -1,4 +1,8 @@
+<?php
 
+include 'includes/dbconn.php';
+
+?>
 
 <div class="container-fluid text-center">    
   <div class="row content">
