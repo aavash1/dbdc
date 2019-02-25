@@ -26,6 +26,7 @@ foreach($sql as $key => $value){
 							<th>Name</th>
 							<th>Email</th>
 							<th>Area of Research</th>
+							<th>Options</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -39,6 +40,7 @@ foreach($sql as $key => $value){
 								<td><?php echo $r["std_name"]?></td>
 								<td><?php echo $r["std_email"]?></td>
 								<td><?php echo $r["std_research"]?></td>
+								<td><a class="btn btn-primary" href="">Edit</a></td>
 							</tr>
 						<?php }?>
 					</tbody>
