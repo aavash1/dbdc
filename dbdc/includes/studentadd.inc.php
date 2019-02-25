@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 		exit();
 	}
 	else{
-		if(!preg_match("/^[a-zA-Z/'/-\040]+$/", $name)){
+		if(preg_match("/^[a-zA-Z/'/-\040]+$/", $name)){
 			header("Location: ../addStudents.php?insertDetails=invalid");
 			exit();
 		}
