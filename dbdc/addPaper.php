@@ -1,4 +1,6 @@
-
+<?php
+include 'includes/auth.php';
+?>
 
 <div class="container-fluid text-center">    
   <div class="row content">

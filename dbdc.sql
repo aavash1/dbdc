@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 24, 2019 at 02:14 PM
+-- Generation Time: Feb 26, 2019 at 03:52 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -55,6 +55,14 @@ CREATE TABLE `paper_tbl` (
   `paper_type` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `paper_tbl`
+--
+
+INSERT INTO `paper_tbl` (`paper_id`, `paper_title`, `author_name`, `available_links`, `paper_type`) VALUES
+(1, 'Efficient Processing of Top-k Query', 'Aavash Bhandari', 'www.dblp.co', 'poster'),
+(2, 'test', 'Aavash Bhandari', 'www.dblp.co', 'poster');
+
 -- --------------------------------------------------------
 
 --
@@ -65,9 +73,24 @@ CREATE TABLE `student_tbl` (
   `std_id` int(100) NOT NULL,
   `std_name` varchar(100) NOT NULL,
   `std_email` varchar(100) NOT NULL,
-  `std_research` text NOT NULL,
+  `std_research` text,
   `std_type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student_tbl`
+--
+
+INSERT INTO `student_tbl` (`std_id`, `std_name`, `std_email`, `std_research`, `std_type`) VALUES
+(1, 'Aavash Bhandari', 'aavash@gmail.com', 'Spatial Database', 'Master'),
+(2, 'Ronnie Mativenga', 'ronnie@gmail.com', 'Flash memory', 'PhD'),
+(3, 'Rize Zin', 'rizejin@gmail.com', '', 'PhD Alumni'),
+(4, 'Sun Jing', 'sunjingsky@gmail.com', '', 'Master Alumni'),
+(5, 'Kim Dong Hwan', 'kkim@ajou.ac.kr', 'Big data, NoSQl', 'Master'),
+(6, 'Maxiaohan', 'maxiaohan@ajou.ac.kr', 'Machine learning, Image Processing with GAN ', 'PhD'),
+(7, 'Aziz Hasanov', 'hasanovaziz.kh@gmail.com', 'Adaptive Learning, Learning context', 'PhD'),
+(8, 'Han Seung Hyun', 'han@gmail.com', 'NLP, Deep Neural Network, Machine Learning', 'Master'),
+(9, 'Chae Suk Joo', 'aaa@gmail.com', 'Distributed data', 'Master');
 
 --
 -- Indexes for dumped tables
@@ -105,13 +128,13 @@ ALTER TABLE `login_tbl`
 -- AUTO_INCREMENT for table `paper_tbl`
 --
 ALTER TABLE `paper_tbl`
-  MODIFY `paper_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `paper_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `student_tbl`
 --
 ALTER TABLE `student_tbl`
-  MODIFY `std_id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `std_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

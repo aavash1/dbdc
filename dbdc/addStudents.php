@@ -1,5 +1,6 @@
 <?php
 
+include 'includes/auth.php';
 include 'includes/dbconn.php';
 
 ?>

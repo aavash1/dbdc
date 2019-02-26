@@ -1,7 +1,5 @@
-<?php
-session_start();
-?>
 
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +77,7 @@ session_start();
           <ul class="dropdown-menu" role="listbox">
           <li><a href="index.php?addConf" role="option">Add Papers</a></li>
           <li class="divider"></li>
-          <li><a href="index.php?updatePaper" role="option">Update Papers</a></li>
+          <li><a href="index.php?listpaper" role="option">List Papers</a></li>
 
           </ul>
           </li>
@@ -136,7 +134,7 @@ session_start();
           </ul>
           </li>
 
-          <li><a href="index.php?Contact">Contact</a></li>
+          
 
 
           </ul>
@@ -158,9 +156,6 @@ session_start();
  }
  else if(isset($_GET['Publications'])){
    include 'includes/content-publications.php';
- }
- else if(isset($_GET['Contact'])){
-   include 'includes/content-contactus.php';
  }
  else if(isset($_GET['login'])){
   include 'includes/login.php';
@@ -186,8 +181,11 @@ else if(isset($_GET['updateStudents'])){
 else if(isset($_GET['addConf'])){
   include 'addPaper.php';
 }
-else if(isset($_GET['updatePaper'])){
-  include 'updatePapers.php';
+else if(isset($_GET['listpaper'])){
+  include 'listpaper.php';
+}
+else if(isset($_GET['updatepaper'])){
+  include 'updatepaper.php';
 }
 else{
 	include 'includes/content-aboutus.php';

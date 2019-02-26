@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if(isset($_POST['submit'])){
 	include 'dbconn.php';
@@ -38,9 +37,10 @@ if(isset($_POST['submit'])){
 				// }
 				else{
 					//Login the user here
+					session_start();
 					$_SESSION['u_id']=$row['user_id'];
 					$_SESSION['u_uid']=$row['user_uid'];
-					header("Location: ../index.php?login=success");
+					header("Location: index.php");
 					exit();
 
 				}

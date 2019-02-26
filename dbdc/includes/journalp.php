@@ -1,7 +1,7 @@
 <?php
 include 'dbconn.php';
 $Journal="SELECT * FROM paper_tbl where paper_type='Journal' ;";
-$sql = array('Journal'=>$Journal);
+$sql = array('Journal' => $Journal);
 $results = [];
 foreach($sql as $key => $value){
 	$result=mysqli_query($conn,$value);
@@ -36,7 +36,7 @@ foreach($sql as $key => $value){
 							<tr>
 								<td><?php echo $r["paper_title"]?></td>
 								<td><?php echo $r["author_name"]?></td>
-								<td><?php <a href="echo $r["available_links"]"?></td>
+								<td><?php echo $r["available_links"]?></td>
 							</tr>
 						<?php }?>
 					</tbody>
